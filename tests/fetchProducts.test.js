@@ -16,7 +16,7 @@ describe('1 - Teste a função fetchProducts', () => {
     expect(fetch).toHaveBeenCalledWith(endpoint)
   })
   it('Verifica se ao passar "computador" como parâmetro da função fetchProducts, retorna uma estrutura de dados igual ao objeto computadorSearch', async () => {
-    expect(await fetchProducts('computador')).toStrictEqual(computadorSearch)
+    expect(await fetchProducts('computador')).toEqual(computadorSearch)
   })
   it('Testa se ao chamar a função "fetchProducts" sem parâmetro, retorna um erro', async () => {
     const received = await fetchProducts()
