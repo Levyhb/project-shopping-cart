@@ -154,3 +154,12 @@ body {
   background-color: rgb(249, 249, 246);
   cursor: pointer;
 }
+
+.loading {
+  font-size: 2em;
+  color: green;
+  text-align: center;
+  position: fixed;
+  left: 45%;
+  top: 50%;
+}

@@ -1,4 +1,7 @@
 const cartItems = document.querySelector('.cart__items');
+const cartElement = document.querySelector('.cart');
+const containerElement = document.querySelector('.container');
+
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -29,6 +32,7 @@ const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').inn
 
 const cartItemClickListener = (event) => {
   cartItems.removeChild(event.target);
+  saveCartItems(cartItems.innerHTML);
 };
 
 const createCartItemElement = ({ sku, name, salePrice }) => {
@@ -38,7 +42,7 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
   li.addEventListener('click', cartItemClickListener);
   return li;
 };
-  
+
 const addToCart = async (event) => {
   const itemsFetch = await fetchItem(getSkuFromProductItem(event.target.parentNode));
 
@@ -48,12 +52,13 @@ const addToCart = async (event) => {
     salePrice: itemsFetch.price,
   });
   cartItems.appendChild(resultCart);
+  saveCartItems(cartItems.innerHTML);  
 };
 
-  const addedItems = () => {
+const addedItems = () => {
     const itemAdd = document.querySelectorAll('.item__add');
     itemAdd.forEach((item) => item.addEventListener('click', addToCart));
-  };
+};
   
   const listProducts = async () => {
   const sectItens = document.querySelector('.items');
@@ -73,7 +78,40 @@ const removeAllItens = () => {
   const cleanBtn = document.querySelector('.empty-cart');
   cleanBtn.addEventListener('click', () => {
     cartItems.innerHTML = '';
+    saveCartItems(cartItems.innerHTML);
   });
 };
 removeAllItens();
-window.onload = async () => { await listProducts(); };
+
+const getLocalStorage = () => {
+const storage = getSavedCartItems();
+cartItems.innerHTML = storage;
+};
+const getAllItems = () => {
+const cartItemsElement = document.querySelectorAll('.cart__item');
+cartItemsElement.forEach((event) => {
+  event.addEventListener('click', cartItemClickListener);
+});
+};
+
+const loading = () => {
+const loadingMessage = document.createElement('h2');
+loadingMessage.innerText = 'Carregando...';
+loadingMessage.className = 'loading';
+cartElement.style.display = 'none';
+containerElement.style.display = 'block';
+containerElement.appendChild(loadingMessage);
+
+setTimeout(() => {
+  containerElement.style.display = 'flex';
+  containerElement.removeChild(loadingMessage);
+  cartElement.style.display = 'flex';
+  listProducts();
+  getLocalStorage();
+  getAllItems();
+}, 1000);
+};
+
+window.onload = async () => {
+  loading();
+};
