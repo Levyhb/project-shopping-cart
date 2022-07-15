@@ -1,6 +1,6 @@
 const cartItems = document.querySelector('.cart__items');
 const cartElement = document.querySelector('.cart');
-const containerElement = document.querySelector('.container');
+const containerElement = document.querySelector('.container-items');
 const priceElement = document.querySelector('.total-price');
 const priceCartElement = document.querySelector('.price_cart');
 const myCartElement = document.querySelector('.container-cartTitle');
@@ -78,7 +78,7 @@ const createProductItemElement = ({ sku, name, image, price }) => {
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
   section.appendChild(createCustomElement('span', 'item__price', `R$ ${price} `));
-  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
+  section.appendChild(createCustomElement('button', 'item__add', '🛒 Adicionar ao carrinho!'));
   return section; 
 };
 

@@ -74,7 +74,7 @@ body {
   font-weight: 700;
 }
 
-.container {
+.container-items {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -108,7 +108,6 @@ body {
 .item {
   display: flex;
   flex-direction: column;
-  height: auto;
   margin: 5px;
   width: 200px;
   border: 2px solid rgba(209, 209, 209, 0.721);
@@ -117,6 +116,9 @@ body {
 }
 
 .item:hover {
+  transition: all 0.5s;
+  font-size: 17px;
+  width: 207px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.451);
 }
 
@@ -141,7 +143,7 @@ body {
   border: 0;
   cursor: pointer;
   margin: 0;
-  padding: 8px;
+  padding: 8px 4px;
   color: white;
 }
 
@@ -152,10 +154,11 @@ body {
 
 .cart {
   display: flex;
-  flex-basis: 32%;
+  flex-basis: 31%;
   flex-flow: column wrap;
   background-color: rgb(241, 241, 238);
   height: 100vh;
+  
 }
 
 .cart .cart__items {
