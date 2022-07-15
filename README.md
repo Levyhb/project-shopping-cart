@@ -7,7 +7,7 @@ Projeto realizado para reforçar os estudos em assincronicidade e a requisiçõe
 
  - [Trybe](https://www.betrybe.com/) 
    
-  - [API do mercado livre](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas) 
+ - [API do mercado livre](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas) 
 
 ## Tecnologias utilizadas 
 
@@ -21,3 +21,7 @@ Projeto realizado para reforçar os estudos em assincronicidade e a requisiçõe
 ## Autores
 
 - [@Levyhb](https://github.com/Levyhb)
+
+## Demonstração do projeto
+
+https://user-images.githubusercontent.com/94788307/179284381-2b0645c8-08d4-46ec-b6aa-3da23db27959.mp4
