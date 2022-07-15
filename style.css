@@ -79,6 +79,8 @@ body {
   justify-content: space-around;
   flex-direction: column;
   width: 100%;
+
+  --bs-gutter-x: 1.5rem;
 }
 
 .div-search {
@@ -109,7 +111,7 @@ body {
   height: auto;
   margin: 5px;
   width: 200px;
-  border: 2px solid rgb(234, 234, 233);
+  border: 2px solid rgba(209, 209, 209, 0.721);
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -160,12 +162,14 @@ body {
   height: 500px;
   overflow-y: scroll;
   background-color: rgb(232, 232, 232);
+  padding-left: 0;
 }
 
 .cart__item {
   padding: 10px;
   margin-top: 2px;
-  border: solid var(--cor-prices) 1px;
+  border: solid rgba(0, 0, 0, 0.2) 1px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.473);
 }
 
 .cart__item:hover {
@@ -215,7 +219,9 @@ body {
   font-size: 14px;
   border: 2px solid var(--cor-prices);
   padding: 5px;
-  color: var(--cor-prices);
+  color: white;
+  background-color: rgb(11 150 100);
+  font-weight: 600;
 }
 
 .price-container span {
