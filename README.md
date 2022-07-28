@@ -18,6 +18,8 @@ Esse projeto foi realizado para reforçar os estudos em assincronicidade e a req
 - Jest 
 - Git
 
+#### Responsividade: ❌
+
 ## Autores
 
 - [@Levyhb](https://github.com/Levyhb)
